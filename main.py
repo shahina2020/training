@@ -12,10 +12,9 @@ def index():
 def predict():
     #prediction=model.predict([[request.form.get('temperature')]])
     prediction=model.predict([[28]])
-
     output=round(prediction[0],2)
     print(output)
-    return render_template('index.html')
+    return render_template('index.html',prediction_text=f'total revenue generated is Rpys.{output}/-')
 
 if __name__== '__main__':
     app.run(debug=True)
